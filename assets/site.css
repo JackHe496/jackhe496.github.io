@@ -7,7 +7,9 @@ html[data-theme=dark]{color-scheme:dark;--paper:#262624;--surface:#30302e;--ink:
 @media(max-width:640px){.nav-wrap,main,footer{margin-left:22px;margin-right:22px}.nav-wrap{padding:18px 0;flex-wrap:wrap;gap:13px}.brand{font-size:1.2rem}.nav-links{gap:19px;flex-wrap:wrap}.nav-links a{font-size:.875rem}.theme-toggle{width:20px}.home{min-height:calc(100svh - 110px);padding-bottom:80px}.home-avatar{width:170px;height:170px}.identity{font-size:.96rem;max-width:350px;line-height:1.9}.page-heading{font-size:2.3rem}main{padding-top:42px}.about-grid{display:flex;flex-direction:column;gap:30px}.portrait{width:180px;min-height:225px}.projects-grid{grid-template-columns:1fr}.cv-entry{grid-template-columns:1fr;gap:5px}.cv-heading{align-items:flex-start;flex-direction:column;gap:10px}.section-title{margin-top:35px}footer{flex-wrap:wrap;gap:0;font-size:.78rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body{transition:none}}
 
-/* Keep the avatar visible as a complete, softly framed circle in both themes. */
-.home-avatar{border:1px solid #d7c9b5;border-radius:50%;padding:10px;background:#f3eadb;box-shadow:0 5px 20px rgba(87,65,37,.06)}
-.home-avatar img{width:100%;height:100%;display:block;object-fit:cover;mix-blend-mode:normal;background:#fff}
-html[data-theme=dark] .home-avatar{border-color:#625549;background:#39342e;box-shadow:0 5px 20px rgba(0,0,0,.14)}
+/* A raised portrait with a fine light rim and soft directional shadows. */
+.home-avatar{position:relative;isolation:isolate;border:1px solid #dfd2c0;border-radius:50%;padding:5px;background:linear-gradient(145deg,#fffdf7 10%,#f4e9d8 65%,#d9c7ae);box-shadow:0 20px 42px -12px rgba(75,49,26,.30),0 7px 14px -6px rgba(75,49,26,.20),inset 0 2px 2px rgba(255,255,255,.95),inset 0 -2px 3px rgba(110,76,40,.14);transform:translateY(-3px);transition:transform .3s ease,box-shadow .3s ease}
+.home-avatar img{width:100%;height:100%;display:block;object-fit:cover;mix-blend-mode:normal;background:#fff;border:1px solid rgba(102,76,47,.10)}
+html[data-theme=dark] .home-avatar{border-color:#80705c;background:linear-gradient(145deg,#d5c7af,#82705b 56%,#493e31);box-shadow:0 22px 46px -12px rgba(0,0,0,.65),0 7px 15px -5px rgba(0,0,0,.40),inset 0 2px 2px rgba(255,244,221,.45),inset 0 -2px 3px rgba(0,0,0,.25)}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.home-avatar:hover{transform:translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){.home-avatar{transition:none;transform:none}}
