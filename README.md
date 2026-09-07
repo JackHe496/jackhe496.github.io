@@ -22,43 +22,10 @@ GitHub's account-site domain follows the account's username. A repository named
 `JackHe.github.io` under `JackHe496` does not give that account the domain
 `JackHe.github.io`.
 
-## Edit on the website
+## Maintain the website
 
-Open **Edit** in the navigation bar, or visit **/edit/**.
-
-For the first connection:
-
-1. In GitHub, open **Settings → Developer settings → Personal access tokens →
-   Fine-grained tokens → Generate new token**.
-2. Use **JackHe496** as the resource owner. Set an expiration date.
-3. Choose **Only select repositories**, then select **jackhe496.github.io**.
-4. Under repository permissions, set **Contents** to **Read and write**.
-   Metadata read access is supplied by GitHub. No workflow or account-wide
-   permission is needed by the editor.
-5. Generate the token and paste it into the website's **GitHub token** field.
-   Do not paste it into ChatGPT, your biography, or a repository file.
-
-The editor keeps the token only in memory for the open tab. It calls GitHub
-directly over HTTPS; it has no third-party authentication server. Refreshing or
-disconnecting clears the token. This is a token-based connection, not OAuth
-single sign-on.
-
-You can edit all current personal content, add or remove education entries,
-research projects and laboratory reports, and upload pictures or PDFs (5 MB per
-file, 20 MB of staged uploads per publish). Uploaded assets and the shared content
-file are committed together. Clicking **Publish changes** saves to GitHub;
-the public site updates after the GitHub Pages deployment completes.
-
-Only the repository owner with write access can publish through the editor.
-Other visitors can see the editor's connection page but cannot change the site.
-No token is bundled with the website, stored in browser storage, or sent to an
-image host. The editor refuses to overwrite a newer branch revision. If you
-edit from two tabs, reload and reapply the draft after a conflict. Unsaved form
-changes are held only in the current tab, with a warning before leaving.
-
-Removing a picture or project removes its reference from the website. It does
-not erase older uploads or Git history. Keep private and unpublished material
-out of this public repository.
+Website changes are maintained through this GitHub repository. Ask Codex to update
+the content or design and publish the changes through GitHub Pages.
 
 ## Edit files directly
 
@@ -84,16 +51,7 @@ No build or package installation is needed:
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000`. The editor connects to the real GitHub repository,
-so publishing from a local preview still changes the public site.
-
-The focused editor tests run with:
-
-```sh
-node --test tests/editor-api.test.mjs
-```
-
-These tests use a fake GitHub API and never write to a live repository.
+Open `http://localhost:8000` to preview the website.
 
 ## References and licenses
 
