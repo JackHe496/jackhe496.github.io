@@ -13,3 +13,11 @@ html[data-theme=dark]{color-scheme:dark;--paper:#262624;--surface:#30302e;--ink:
 html[data-theme=dark] .home-avatar{border-color:#80705c;background:linear-gradient(145deg,#d5c7af,#82705b 56%,#493e31);box-shadow:0 22px 46px -12px rgba(0,0,0,.65),0 7px 15px -5px rgba(0,0,0,.40),inset 0 2px 2px rgba(255,244,221,.45),inset 0 -2px 3px rgba(0,0,0,.25)}
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.home-avatar:hover{transform:translateY(-7px)}}
 @media(prefers-reduced-motion:reduce){.home-avatar{transition:none;transform:none}}
+
+/* A quiet introduction above the selected cream Chiikawa illustration. */
+body[data-page=home] .home{justify-content:flex-start;padding:35px 0 22px;min-height:calc(100svh - 90px)}
+body[data-page=home] .home-avatar{width:150px;height:150px;margin-bottom:21px;flex-shrink:0}
+body[data-page=home] .identity{position:relative;z-index:1}
+body[data-page=home] .home::after{content:"";display:block;flex-shrink:0;width:100%;max-width:960px;aspect-ratio:1448/650;margin-top:18px;background:url('./home-chiikawa-cream.webp') center 53% / cover no-repeat;mask-image:linear-gradient(to bottom,transparent,#000 8%,#000 91%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 8%,#000 91%,transparent)}
+html[data-theme=dark] body[data-page=home] .home::after{filter:brightness(.7) saturate(.8);border-radius:24px;opacity:.88}
+@media(max-width:640px){body[data-page=home] .home{padding-top:42px;min-height:calc(100svh - 110px)}body[data-page=home] .home-avatar{width:132px;height:132px}body[data-page=home] .home::after{width:calc(100% + 24px);max-width:none;margin-top:38px}}
